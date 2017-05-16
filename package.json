@@ -1,0 +1,27 @@
+{
+  "name": "bootstrap-mithril",
+  "version": "1.0.0",
+  "description": "Bootstrap components for mithril",
+  "main": "dist/bootstrap-mithril.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hypergram/bootstrap-mithril.git"
+  },
+  "keywords": [
+    "mithril",
+    "bootstrap"
+  ],
+  "author": "Hypergram",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hypergram/bootstrap-mithril/issues"
+  },
+  "homepage": "https://github.com/hypergram/bootstrap-mithril#readme",
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "mithril": "^1.1.1"
+  }
+}
