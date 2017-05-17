@@ -9,8 +9,10 @@ button.view = function (vnode) {
 	return m(element, {
 		className: attrs.classes ? attrs.classes.join(" ") : "btn-default",
 		href: attrs.href || null,
+		type: attrs.href ? null : attrs.type || "button",
 		oncreate: attrs.href ? m.route.link : null,
-		disabled: attrs.disabled ? "disabled" : ""
+		disabled: attrs.disabled ? "disabled" : "",
+		onclick: attrs.onclick
 	}, [attrs.before, attrs.label, attrs.after]);
 };
 
