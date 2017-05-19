@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -95,6 +95,159 @@ module.exports = g;
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var apply = Function.prototype.apply;
+
+// DOM APIs, for completeness
+
+exports.setTimeout = function() {
+  return new Timeout(apply.call(setTimeout, window, arguments), clearTimeout);
+};
+exports.setInterval = function() {
+  return new Timeout(apply.call(setInterval, window, arguments), clearInterval);
+};
+exports.clearTimeout =
+exports.clearInterval = function(timeout) {
+  if (timeout) {
+    timeout.close();
+  }
+};
+
+function Timeout(id, clearFn) {
+  this._id = id;
+  this._clearFn = clearFn;
+}
+Timeout.prototype.unref = Timeout.prototype.ref = function() {};
+Timeout.prototype.close = function() {
+  this._clearFn.call(window, this._id);
+};
+
+// Does not start the time, just sets up the members needed.
+exports.enroll = function(item, msecs) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = msecs;
+};
+
+exports.unenroll = function(item) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = -1;
+};
+
+exports._unrefActive = exports.active = function(item) {
+  clearTimeout(item._idleTimeoutId);
+
+  var msecs = item._idleTimeout;
+  if (msecs >= 0) {
+    item._idleTimeoutId = setTimeout(function onTimeout() {
+      if (item._onTimeout)
+        item._onTimeout();
+    }, msecs);
+  }
+};
+
+// setimmediate attaches itself to the global object
+__webpack_require__(8);
+exports.setImmediate = setImmediate;
+exports.clearImmediate = clearImmediate;
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mithril__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mithril___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_mithril__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_bootstrap_mithril__ = __webpack_require__(4);
+
+
+
+var root = document.body;
+
+__WEBPACK_IMPORTED_MODULE_0_mithril___default.a.render(root, __WEBPACK_IMPORTED_MODULE_0_mithril___default()(".container", [__WEBPACK_IMPORTED_MODULE_0_mithril___default()(".row", [__WEBPACK_IMPORTED_MODULE_0_mithril___default()(".col-sm-12", [__WEBPACK_IMPORTED_MODULE_0_mithril___default()("h1", "Bootstrap Mithril"), __WEBPACK_IMPORTED_MODULE_0_mithril___default()("p", "Bootstrap components for Mithril"), __WEBPACK_IMPORTED_MODULE_0_mithril___default()("h2", "Buttons"), __WEBPACK_IMPORTED_MODULE_0_mithril___default()("p", "Buttons"), __WEBPACK_IMPORTED_MODULE_0_mithril___default()(__WEBPACK_IMPORTED_MODULE_1_bootstrap_mithril__["a" /* button */], {
+	label: "Primary",
+	classes: ["btn-primary mr-1"]
+}), __WEBPACK_IMPORTED_MODULE_0_mithril___default()(__WEBPACK_IMPORTED_MODULE_1_bootstrap_mithril__["a" /* button */], {
+	label: "Info with click event",
+	classes: ["btn-info mr-1"],
+	onclick: function onclick(evt) {
+		alert("clicked!");
+	}
+}), __WEBPACK_IMPORTED_MODULE_0_mithril___default()(__WEBPACK_IMPORTED_MODULE_1_bootstrap_mithril__["a" /* button */], {
+	label: "Success",
+	classes: ["btn-success mr-1"],
+	before: __WEBPACK_IMPORTED_MODULE_0_mithril___default()("i.fa.fa-check mr-2")
+}), __WEBPACK_IMPORTED_MODULE_0_mithril___default()(__WEBPACK_IMPORTED_MODULE_1_bootstrap_mithril__["a" /* button */], {
+	label: "Danger",
+	classes: ["btn-danger mr-1"],
+	after: __WEBPACK_IMPORTED_MODULE_0_mithril___default()("i.fa.fa-times ml-2")
+}), __WEBPACK_IMPORTED_MODULE_0_mithril___default()("hr"), __WEBPACK_IMPORTED_MODULE_0_mithril___default()("p", "Button with link"), __WEBPACK_IMPORTED_MODULE_0_mithril___default()(__WEBPACK_IMPORTED_MODULE_1_bootstrap_mithril__["a" /* button */], {
+	label: "Link",
+	href: "#",
+	classes: ["btn-info"]
+})])])]));
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(2);
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return button; });
+/* unused harmony export card */
+/* unused harmony export navbar */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mithril__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mithril___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_mithril__);
+
+
+var button = {};
+button.oninit = function () {};
+button.view = function (vnode) {
+	//const state = vnode.state
+	var attrs = vnode.attrs;
+	var element = (attrs.href ? "a" : "button") + ".btn";
+	return __WEBPACK_IMPORTED_MODULE_0_mithril___default()(element, {
+		className: attrs.classes ? attrs.classes.join(" ") : "btn-default",
+		href: attrs.href || null,
+		type: attrs.href ? null : attrs.type || "button",
+		oncreate: attrs.href ? __WEBPACK_IMPORTED_MODULE_0_mithril___default.a.route.link : null,
+		disabled: attrs.disabled ? "disabled" : "",
+		onclick: attrs.onclick
+	}, [attrs.before, attrs.label, attrs.after]);
+};
+
+var card = {};
+card.view = function (vnode) {
+	//const state = vnode.state
+	var attrs = vnode.attrs;
+	return __WEBPACK_IMPORTED_MODULE_0_mithril___default()(".card", {
+		className: attrs.classes ? attrs.classes.join(" ") : null
+	});
+};
+
+var navbar = {};
+navbar.view = function (vnode) {
+	//const state = vnode.state
+	var attrs = vnode.attrs;
+	return __WEBPACK_IMPORTED_MODULE_0_mithril___default()(".navbar", {
+		className: attrs.classes ? attrs.classes.join(" ") : null
+	});
+};
+
+
+
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(setImmediate, global) {;(function() {
@@ -1324,132 +1477,7 @@ m.vnode = Vnode
 if (true) module["exports"] = m
 else window.m = m
 }());
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).setImmediate, __webpack_require__(0)))
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var apply = Function.prototype.apply;
-
-// DOM APIs, for completeness
-
-exports.setTimeout = function() {
-  return new Timeout(apply.call(setTimeout, window, arguments), clearTimeout);
-};
-exports.setInterval = function() {
-  return new Timeout(apply.call(setInterval, window, arguments), clearInterval);
-};
-exports.clearTimeout =
-exports.clearInterval = function(timeout) {
-  if (timeout) {
-    timeout.close();
-  }
-};
-
-function Timeout(id, clearFn) {
-  this._id = id;
-  this._clearFn = clearFn;
-}
-Timeout.prototype.unref = Timeout.prototype.ref = function() {};
-Timeout.prototype.close = function() {
-  this._clearFn.call(window, this._id);
-};
-
-// Does not start the time, just sets up the members needed.
-exports.enroll = function(item, msecs) {
-  clearTimeout(item._idleTimeoutId);
-  item._idleTimeout = msecs;
-};
-
-exports.unenroll = function(item) {
-  clearTimeout(item._idleTimeoutId);
-  item._idleTimeout = -1;
-};
-
-exports._unrefActive = exports.active = function(item) {
-  clearTimeout(item._idleTimeoutId);
-
-  var msecs = item._idleTimeout;
-  if (msecs >= 0) {
-    item._idleTimeoutId = setTimeout(function onTimeout() {
-      if (item._onTimeout)
-        item._onTimeout();
-    }, msecs);
-  }
-};
-
-// setimmediate attaches itself to the global object
-__webpack_require__(8);
-exports.setImmediate = setImmediate;
-exports.clearImmediate = clearImmediate;
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mithril__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mithril___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_mithril__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bootstrap_mithril_dist_bootstrap_mithril__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bootstrap_mithril_dist_bootstrap_mithril___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__bootstrap_mithril_dist_bootstrap_mithril__);
-
-
-
-var root = document.body;
-
-__WEBPACK_IMPORTED_MODULE_0_mithril___default.a.render(root, __WEBPACK_IMPORTED_MODULE_0_mithril___default()(".container", [__WEBPACK_IMPORTED_MODULE_0_mithril___default()(".row", [__WEBPACK_IMPORTED_MODULE_0_mithril___default()(".col-sm-12", [__WEBPACK_IMPORTED_MODULE_0_mithril___default()("h1", "Bootstrap Mithril"), __WEBPACK_IMPORTED_MODULE_0_mithril___default()("p", "Bootstrap components for Mithril"), __WEBPACK_IMPORTED_MODULE_0_mithril___default()("h2", "Buttons"), __WEBPACK_IMPORTED_MODULE_0_mithril___default()("p", "Buttons"), __WEBPACK_IMPORTED_MODULE_0_mithril___default()(__WEBPACK_IMPORTED_MODULE_1__bootstrap_mithril_dist_bootstrap_mithril__["button"], {
-	label: "Primary",
-	classes: ["btn-primary mr-1"]
-}), __WEBPACK_IMPORTED_MODULE_0_mithril___default()(__WEBPACK_IMPORTED_MODULE_1__bootstrap_mithril_dist_bootstrap_mithril__["button"], {
-	label: "Info with click event",
-	classes: ["btn-info mr-1"],
-	onclick: function onclick(evt) {
-		alert("clicked!");
-	}
-}), __WEBPACK_IMPORTED_MODULE_0_mithril___default()(__WEBPACK_IMPORTED_MODULE_1__bootstrap_mithril_dist_bootstrap_mithril__["button"], {
-	label: "Success",
-	classes: ["btn-success mr-1"],
-	before: __WEBPACK_IMPORTED_MODULE_0_mithril___default()("i.fa.fa-check mr-2")
-}), __WEBPACK_IMPORTED_MODULE_0_mithril___default()(__WEBPACK_IMPORTED_MODULE_1__bootstrap_mithril_dist_bootstrap_mithril__["button"], {
-	label: "Danger",
-	classes: ["btn-danger mr-1"],
-	after: __WEBPACK_IMPORTED_MODULE_0_mithril___default()("i.fa.fa-times ml-2")
-}), __WEBPACK_IMPORTED_MODULE_0_mithril___default()("hr"), __WEBPACK_IMPORTED_MODULE_0_mithril___default()("p", "Button with link"), __WEBPACK_IMPORTED_MODULE_0_mithril___default()(__WEBPACK_IMPORTED_MODULE_1__bootstrap_mithril_dist_bootstrap_mithril__["button"], {
-	label: "Link",
-	href: "#",
-	classes: ["btn-info"]
-})])])]));
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-!function (e, t) {
-  "object" == ( false ? "undefined" : _typeof(exports)) && "undefined" != typeof module ? t(exports, __webpack_require__(1)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports, __webpack_require__(1)], __WEBPACK_AMD_DEFINE_FACTORY__ = (t),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : t(e["bootstrap-mithril"] = e["bootstrap-mithril"] || {}, e.m);
-}(this, function (e, t) {
-  "use strict";
-  t = "default" in t ? t.default : t;var n = {};n.oninit = function () {}, n.view = function (e) {
-    var n = e.attrs,
-        i = (n.href ? "a" : "button") + ".btn";return t(i, { className: n.classes ? n.classes.join(" ") : "btn-default", href: n.href || null, type: n.href ? null : n.type || "button", oncreate: n.href ? t.route.link : null, disabled: n.disabled ? "disabled" : "", onclick: n.onclick }, [n.before, n.label, n.after]);
-  }, e.button = n, Object.defineProperty(e, "__esModule", { value: !0 });
-});
-//# sourceMappingURL=bootstrap-mithril.js.map
-
-/***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(3);
-
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1).setImmediate, __webpack_require__(0)))
 
 /***/ }),
 /* 6 */
@@ -2682,7 +2710,7 @@ m.vnode = Vnode
 if (true) module["exports"] = m
 else window.m = m
 }());
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).setImmediate, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1).setImmediate, __webpack_require__(0)))
 
 /***/ }),
 /* 7 */

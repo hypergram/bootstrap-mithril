@@ -16,4 +16,22 @@ button.view = function (vnode) {
 	}, [attrs.before, attrs.label, attrs.after]);
 };
 
-export { button };
+var card = {};
+card.view = function (vnode) {
+	//const state = vnode.state
+	var attrs = vnode.attrs;
+	return m(".card", {
+		className: attrs.classes ? attrs.classes.join(" ") : null
+	});
+};
+
+var navbar = {};
+navbar.view = function (vnode) {
+	//const state = vnode.state
+	var attrs = vnode.attrs;
+	return m(".navbar", {
+		className: attrs.classes ? attrs.classes.join(" ") : null
+	});
+};
+
+export { button, card, navbar };

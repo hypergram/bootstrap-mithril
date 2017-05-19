@@ -1,5 +1,5 @@
 import m from "mithril"
-import * as bm from "../../bootstrap-mithril/dist/bootstrap-mithril"
+import * as bm from "bootstrap-mithril"
 
 
 var root = document.body

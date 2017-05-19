@@ -19,6 +19,8 @@
   ],
   "dependencies": {
     "mithril": "^1.1.1",
-    "bootstrap-mithril-button": "1.0.0"
+    "bootstrap-mithril-button": "1.0.0",
+    "bootstrap-mithril-card": "1.0.0",
+    "bootstrap-mithril-navbar": "1.0.0"
   }
 }

@@ -14,7 +14,8 @@
     "README.md"
   ],
   "dependencies": {
-    "mithril": "^1.1.1"
+    "mithril": "^1.1.1",
+	"bootstrap-mithril": "1.0.0"
   },
   "devDependencies": {
     "http-server": "^0.10.0",
