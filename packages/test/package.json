@@ -1,6 +1,6 @@
 {
 	"name": "test",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": "Nick Goodliff <nick@hypergram.co> (https://hypergram.co)",
 	"license": "MIT",
 	"scripts": {
@@ -14,8 +14,8 @@
 		"README.md"
 	],
 	"dependencies": {
-		"mithril": "1.1.6",
-		"bootstrap-mithril": "1.0.0"
+		"bootstrap-mithril": "^1.0.1",
+		"mithril": "1.1.6"
 	},
 	"devDependencies": {
 		"compression-webpack-plugin": "1.0.1",
