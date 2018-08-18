@@ -1,38 +1,40 @@
 /* global __dirname */
 const path = require("path");
-// const webpack = require("webpack");
 
 module.exports = {
+	context: path.resolve(__dirname, "../src"),
 
-  context: path.resolve(__dirname, "../src"), 
+	entry: {
+		index: "../index.js",
+	},
 
-  entry: {
-    index: "../index.js"
-  },
+	externals: {
+		mithril: "m",
+	},
 
-  output: {
-    path: path.resolve(__dirname, "../dist/js"),
-    filename: "[name].js"
-  },
+	output: {
+		path: path.resolve(__dirname, "../dist/"),
+		filename: "js/[name].js",
+	},
 
-  module: {
-    rules: [
-      {
-        test: /\.js$/, // Check for all js files
-        exclude: /node_modules/,
-        use: [{
-          loader: "babel-loader"
-        }]
-      }
-    ]
-  },
+	module: {
+		rules: [
+			{
+				test: /\.js$/, // Check for all js files
+				exclude: /node_modules/,
+				use: [
+					{
+						loader: "babel-loader",
+						options: {
+							presets: [["env", { modules: false }]],
+						},
+					},
+				],
+			},
+		],
+	},
 
-  plugins: [
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: "vendor"
-    // }),
-  ],
+	plugins: [],
 
-  devtool: "source-map"
-
+	devtool: "source-map",
 };

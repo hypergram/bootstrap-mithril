@@ -1,2 +1,20 @@
-!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?t(exports,require("mithril")):"function"==typeof define&&define.amd?define(["exports","mithril"],t):t(e["bootstrap-mithril"]=e["bootstrap-mithril"]||{},e.m)}(this,function(e,t){"use strict";t="default"in t?t.default:t;var n={};n.oninit=function(){},n.view=function(e){var n=e.attrs,r=(n.href?"a":"button")+".btn";return t(r,{className:n.classes?n.classes.join(" "):"btn-default",href:n.href||null,type:n.href?null:n.type||"button",oncreate:n.href?t.route.link:null,disabled:n.disabled?"disabled":"",onclick:n.onclick},[n.before,n.label,n.after])};var r={};r.view=function(e){var n=e.attrs;return t(".card",{className:n.classes?n.classes.join(" "):null})};var a={};a.view=function(e){var n=e.attrs;return t(".navbar",{className:n.classes?n.classes.join(" "):null})},e.button=n,e.card=r,e.navbar=a,Object.defineProperty(e,"__esModule",{value:!0})});
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('bootstrap-mithril-button'), require('bootstrap-mithril-card'), require('bootstrap-mithril-navbar')) :
+	typeof define === 'function' && define.amd ? define(['exports', 'bootstrap-mithril-button', 'bootstrap-mithril-card', 'bootstrap-mithril-navbar'], factory) :
+	(factory((global['bootstrap-mithril'] = {}),global['bootstrap-mithril-button'],global['bootstrap-mithril-card'],global['bootstrap-mithril-navbar']));
+}(this, (function (exports,bootstrapMithrilButton,bootstrapMithrilCard,bootstrapMithrilNavbar) { 'use strict';
+
+	bootstrapMithrilButton = bootstrapMithrilButton && bootstrapMithrilButton.hasOwnProperty('default') ? bootstrapMithrilButton['default'] : bootstrapMithrilButton;
+	bootstrapMithrilCard = bootstrapMithrilCard && bootstrapMithrilCard.hasOwnProperty('default') ? bootstrapMithrilCard['default'] : bootstrapMithrilCard;
+	bootstrapMithrilNavbar = bootstrapMithrilNavbar && bootstrapMithrilNavbar.hasOwnProperty('default') ? bootstrapMithrilNavbar['default'] : bootstrapMithrilNavbar;
+
+
+
+	exports.button = bootstrapMithrilButton;
+	exports.card = bootstrapMithrilCard;
+	exports.navbar = bootstrapMithrilNavbar;
+
+	Object.defineProperty(exports, '__esModule', { value: true });
+
+})));
 //# sourceMappingURL=bootstrap-mithril.js.map

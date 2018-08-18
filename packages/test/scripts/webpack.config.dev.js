@@ -3,11 +3,11 @@ const path = require("path");
 const config = require("./webpack.config.js");
 
 config.devServer = {
-  contentBase: path.resolve(__dirname, "../dist")
+	contentBase: path.resolve(__dirname, "../dist"),
 };
 
 config.watchOptions = {
-  ignored: /node_modules/
+	ignored: /node_modules/,
 };
 
 module.exports = config;

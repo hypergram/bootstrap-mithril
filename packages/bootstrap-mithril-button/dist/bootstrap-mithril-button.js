@@ -1,2 +1,28 @@
-!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t(require("mithril")):"function"==typeof define&&define.amd?define(["mithril"],t):e["bootstrap-mithril"]=t(e.m)}(this,function(e){"use strict";e="default"in e?e.default:e;var t={};return t.oninit=function(){},t.view=function(t){var n=t.attrs,i=(n.href?"a":"button")+".btn";return e(i,{className:n.classes?n.classes.join(" "):"btn-default",href:n.href||null,type:n.href?null:n.type||"button",oncreate:n.href?e.route.link:null,disabled:n.disabled?"disabled":"",onclick:n.onclick},[n.before,n.label,n.after])},t});
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('mithril')) :
+	typeof define === 'function' && define.amd ? define(['mithril'], factory) :
+	(global['bootstrap-mithril'] = factory(global.m));
+}(this, (function (m) { 'use strict';
+
+	m = m && m.hasOwnProperty('default') ? m['default'] : m;
+
+	var button = {};
+	button.oninit = function () {};
+	button.view = function (vnode) {
+		//const state = vnode.state
+		var attrs = vnode.attrs;
+		var element = (attrs.href ? "a" : "button") + ".btn";
+		return m(element, {
+			className: attrs.classes ? attrs.classes.join(" ") : "btn-default",
+			href: attrs.href || null,
+			type: attrs.href ? null : attrs.type || "button",
+			oncreate: attrs.href ? m.route.link : null,
+			disabled: attrs.disabled ? "disabled" : "",
+			onclick: attrs.onclick
+		}, [attrs.before, attrs.label, attrs.after]);
+	};
+
+	return button;
+
+})));
 //# sourceMappingURL=bootstrap-mithril-button.js.map

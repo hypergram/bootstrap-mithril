@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "author": "Nick Goodliff <nick@hypergram.co> (https://hypergram.co)",
   "license": "MIT",
-  "main": "dist/bootstrap-mithril-button.js",
+  "main": "dist/bootstrap-mithril-button",
   "module": "dist/bootstrap-mithril-button.mjs",
   "scripts": {
-    "clean": "rm -rf dist && mkdir dist",
+    "clean": "rm -rf dist/*",
     "rollup": "../../node_modules/rollup/bin/rollup -c ../../scripts/rollup.umd.js && ../../node_modules/rollup/bin/rollup -c ../../scripts/rollup.es.js",
-    "build": "npm run rollup"
+    "build": "npm run clean && npm run rollup"
   },
   "files": [
     "dist",
