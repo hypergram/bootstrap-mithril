@@ -17,6 +17,5 @@
   "dependencies": {
     "lodash": "4.17.10",
     "mithril": "1.1.6"
-  },
-  "private": true
+  }
 }
