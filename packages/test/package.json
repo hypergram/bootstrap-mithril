@@ -1,6 +1,6 @@
 {
 	"name": "test",
-	"version": "1.0.4-alpha.0",
+	"version": "1.0.4-alpha.1",
 	"author": "Nick Goodliff <nick@hypergram.co> (https://hypergram.co)",
 	"license": "MIT",
 	"private": true,
@@ -15,7 +15,7 @@
 		"README.md"
 	],
 	"dependencies": {
-		"bootstrap-mithril": "^1.0.4-alpha.0",
+		"bootstrap-mithril": "^1.0.4-alpha.1",
 		"mithril": "1.1.6"
 	},
 	"devDependencies": {

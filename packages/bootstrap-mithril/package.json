@@ -1,6 +1,6 @@
 {
 	"name": "bootstrap-mithril",
-	"version": "1.0.4-alpha.0",
+	"version": "1.0.4-alpha.1",
 	"author": "Nick Goodliff <nick@hypergram.co> (https://hypergram.co)",
 	"license": "MIT",
 	"main": "dist/bootstrap-mithril",
@@ -17,11 +17,11 @@
 		"README.md"
 	],
 	"dependencies": {
-		"bootstrap-mithril-breadcrumb": "^1.0.4-alpha.0",
-		"bootstrap-mithril-button": "^1.0.4-alpha.0",
-		"bootstrap-mithril-card": "^1.0.4-alpha.0",
-		"bootstrap-mithril-formgroup": "^1.0.4-alpha.0",
-		"bootstrap-mithril-navbar": "^1.0.4-alpha.0",
+		"bootstrap-mithril-breadcrumb": "^1.0.4-alpha.1",
+		"bootstrap-mithril-button": "^1.0.4-alpha.1",
+		"bootstrap-mithril-card": "^1.0.4-alpha.1",
+		"bootstrap-mithril-formgroup": "^1.0.4-alpha.1",
+		"bootstrap-mithril-navbar": "^1.0.4-alpha.1",
 		"mithril": "1.1.6"
 	}
 }
