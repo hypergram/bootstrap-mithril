@@ -73,6 +73,23 @@ m.render(
 						}),
 					]),
 				]),
+				m("hr"),
+				m("section", [
+					m("h2", "Form group"),
+					m(bm.formgroup, {
+						label: "Name",
+						inputId: "exampleInput1",
+						input: m("input.form-control", {
+							type: "text",
+							id: "exampleInput1",
+							"aria-describedby": "exampleInput1Help",
+						}),
+						helpText: "Helpful info here",
+						helpTextClasses: ["text-muted"],
+						helpTextId: "exampleInput1Help",
+					}),
+				]),
+				m("hr"),
 			]),
 		]),
 	])
