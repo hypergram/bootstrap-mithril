@@ -10,9 +10,9 @@ navbar.view = function (vnode) {
 		oncreate: m.route.link
 	}, attrs.brand.title) : null, attrs.toggler ? m("button.navbar-toggler navbar-toggler-right", {
 		type: "button",
-		data_toggle: "collapse",
-		aria_expanded: "false",
-		aria_label: "Toggle navigation"
+		"data-toggle": "collapse",
+		"aria-expanded": "false",
+		"aria-label": "Toggle navigation"
 	}, [m("span.navbar-toggler-icon")]) : null, attrs.navitems]);
 };
 

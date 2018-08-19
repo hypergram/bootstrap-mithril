@@ -16,7 +16,7 @@ formgroup.view = vnode => {
 						className: attrs.labelClasses
 							? attrs.labelClasses.join(" ")
 							: null,
-						for: attrs.id,
+						for: attrs.inputId,
 					},
 					attrs.label
 				  )

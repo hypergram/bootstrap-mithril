@@ -10,7 +10,7 @@ breadcrumb.view = vnode => {
 		"nav",
 		{
 			className: attrs.classes ? attrs.classes.join(" ") : "",
-			aria_label: "breadcrumb",
+			"aria-label": "breadcrumb",
 		},
 		m("ol.breadcrumb", [
 			map(attrs.items, (b, i) => {
@@ -18,7 +18,7 @@ breadcrumb.view = vnode => {
 					"li.breadcrumb-item",
 					{
 						className: i === l - 1 ? "active" : "",
-						aria_current: i === l - 1 ? "page" : null,
+						"aria-current": i === l - 1 ? "page" : null,
 					},
 					[
 						b.href

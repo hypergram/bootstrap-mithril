@@ -24,9 +24,9 @@ navbar.view = vnode => {
 					"button.navbar-toggler navbar-toggler-right",
 					{
 						type: "button",
-						data_toggle: "collapse",
-						aria_expanded: "false",
-						aria_label: "Toggle navigation",
+						"data-toggle": "collapse",
+						"aria-expanded": "false",
+						"aria-label": "Toggle navigation",
 					},
 					[m("span.navbar-toggler-icon")]
 				  )
