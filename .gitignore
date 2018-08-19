@@ -7,3 +7,5 @@ lerna-debug.log
 npm-debug*
 yarn-error.log
 packages/test/dist/js/index.js.gz
+
+packages/test/yarn-error.log

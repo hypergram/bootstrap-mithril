@@ -2,7 +2,6 @@ import m from "mithril";
 
 const navbar = {};
 navbar.view = vnode => {
-	//const state = vnode.state
 	const attrs = vnode.attrs;
 	return m(
 		"nav.navbar" + attrs.toggler ? ".navbar-expand-lg" : "",
@@ -28,9 +27,6 @@ navbar.view = vnode => {
 						data_toggle: "collapse",
 						aria_expanded: "false",
 						aria_label: "Toggle navigation",
-						// onclick: btn => {
-						// 	$(".navbar-collapse").collapse("toggle");
-						// },
 					},
 					[m("span.navbar-toggler-icon")]
 				  )

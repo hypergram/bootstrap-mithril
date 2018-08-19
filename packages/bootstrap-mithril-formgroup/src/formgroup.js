@@ -25,7 +25,11 @@ formgroup.view = vnode => {
 			attrs.valid || attrs.invalid
 				? m(
 					"div",
-					{ class: `.${attrs.invalid ? "in" : ""}-${attrs.validTooltips ? "tooltip" : "feedback"}` },
+					{
+						class: `.${attrs.invalid ? "in" : ""}-${
+							attrs.validTooltips ? "tooltip" : "feedback"
+						}`,
+					},
 					attrs.valid ? attrs.validMessage : attrs.invalidMessage
 				  )
 				: null,

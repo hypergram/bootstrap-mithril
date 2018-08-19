@@ -1,10 +1,10 @@
 # bootstrap-mithril-card
+
 ## Usage
 
-~~~javascript
+```javascript
 import m from "mithril";
 import card from "bootstrap-mithril-card";
 
-const myCard = m(card, {
-});
-~~~
+const myCard = m(card, {});
+```

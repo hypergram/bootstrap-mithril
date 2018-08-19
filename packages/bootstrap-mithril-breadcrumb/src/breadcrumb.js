@@ -1,5 +1,5 @@
 import m from "mithril";
-import {map} from "lodash";
+import { map } from "lodash";
 
 const breadcrumb = {};
 breadcrumb.oninit = () => {};

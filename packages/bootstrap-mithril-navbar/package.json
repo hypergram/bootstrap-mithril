@@ -1,20 +1,20 @@
 {
-  "name": "bootstrap-mithril-navbar",
-  "version": "1.0.4-alpha.0",
-  "author": "Nick Goodliff <nick@hypergram.co> (https://hypergram.co)",
-  "license": "MIT",
-  "main": "dist/bootstrap-mithril-navbar",
-  "module": "dist/bootstrap-mithril-navbar.mjs",
-  "scripts": {
-    "clean": "rm -rf dist/*",
-    "rollup": "../../node_modules/rollup/bin/rollup -c ../../scripts/rollup.umd.js && ../../node_modules/rollup/bin/rollup -c ../../scripts/rollup.es.js",
-    "build": "npm run clean && npm run rollup"
-  },
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "dependencies": {
-    "mithril": "1.1.6"
-  }
+	"name": "bootstrap-mithril-navbar",
+	"version": "1.0.4-alpha.0",
+	"author": "Nick Goodliff <nick@hypergram.co> (https://hypergram.co)",
+	"license": "MIT",
+	"main": "dist/bootstrap-mithril-navbar",
+	"module": "dist/bootstrap-mithril-navbar.mjs",
+	"scripts": {
+		"clean": "rm -rf dist/*",
+		"rollup": "../../node_modules/rollup/bin/rollup -c ../../scripts/rollup.umd.js && ../../node_modules/rollup/bin/rollup -c ../../scripts/rollup.es.js",
+		"build": "npm run clean && npm run rollup"
+	},
+	"files": [
+		"dist",
+		"README.md"
+	],
+	"dependencies": {
+		"mithril": "1.1.6"
+	}
 }

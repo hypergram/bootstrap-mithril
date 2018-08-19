@@ -1,10 +1,10 @@
 # bootstrap-mithril-formgroup
+
 ## Usage
 
-~~~javascript
+```javascript
 import m from "mithril";
 import formgroup from "bootstrap-mithril-formgroup";
 
-const myFormGroup = m(formgroup, {
-});
-~~~
+const myFormGroup = m(formgroup, {});
+```

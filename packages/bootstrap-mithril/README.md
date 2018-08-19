@@ -1,7 +1,6 @@
 # bootstrap-mithril
 
-This package includes all bootstrap-mithril components. 
-
+This package includes all bootstrap-mithril components.
 
 ```bash
 npm install --save bootstrap-mithril

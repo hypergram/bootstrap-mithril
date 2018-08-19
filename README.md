@@ -1,4 +1,5 @@
 # bootstrap-mithril
+
 Bootstrap v4 components for mithril
 
 ## Setting up the development repo
@@ -21,8 +22,7 @@ This will install all dependencies and run `lerna bootstrap`.
 
 Commands:
 
-* `yarn build` - builds all components (in each dist directory)
-* `yarn clean` - removes all dist directories
+-   `yarn build` - builds all components (in each dist directory)
+-   `yarn clean` - removes all dist directories
 
 Packages are built with [Rollup](http://rollupjs.org), both as `es` module and as `umd`. Rollup creates smaller files compared to Webpack. If you like to experiment, build scripts are in the root `scripts` directory.
-

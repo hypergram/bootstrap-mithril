@@ -2,7 +2,6 @@ import m from 'mithril';
 
 var navbar = {};
 navbar.view = function (vnode) {
-	//const state = vnode.state
 	var attrs = vnode.attrs;
 	return m("nav.navbar" + attrs.toggler ? ".navbar-expand-lg" : "", {
 		className: attrs.classes ? attrs.classes.join(" ") : null
@@ -14,9 +13,6 @@ navbar.view = function (vnode) {
 		data_toggle: "collapse",
 		aria_expanded: "false",
 		aria_label: "Toggle navigation"
-		// onclick: btn => {
-		// 	$(".navbar-collapse").collapse("toggle");
-		// },
 	}, [m("span.navbar-toggler-icon")]) : null, attrs.navitems]);
 };
 

@@ -1,26 +1,27 @@
 {
-  "name": "bootstrap-mithril",
-  "version": "1.0.4-alpha.0",
-  "author": "Nick Goodliff <nick@hypergram.co> (https://hypergram.co)",
-  "license": "MIT",
-  "main": "dist/bootstrap-mithril",
-  "module": "dist/bootstrap-mithril.mjs",
-  "scripts": {
-    "clean": "rm -rf dist/*",
-    "build": "npm run clean && npm run rollup",
-    "rollup": "../../node_modules/rollup/bin/rollup -c ../../scripts/rollup.umd.js && ../../node_modules/rollup/bin/rollup -c ../../scripts/rollup.es.js",
-    "webpack:es": "DEST=bootstrap-mithril.mjs ../../node_modules/webpack/bin/webpack.js -p --config ../../scripts/webpack.config.es.js",
-    "webpack:umd": "DEST=bootstrap-mithril.js ../../node_modules/webpack/bin/webpack.js -p --config ../../scripts/webpack.config.umd.js"
-  },
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "dependencies": {
-    "bootstrap-mithril-breadcrumb": "^1.0.4-alpha.0",
-    "bootstrap-mithril-button": "^1.0.4-alpha.0",
-    "bootstrap-mithril-card": "^1.0.4-alpha.0",
-    "bootstrap-mithril-navbar": "^1.0.4-alpha.0",
-    "mithril": "1.1.6"
-  }
+	"name": "bootstrap-mithril",
+	"version": "1.0.4-alpha.0",
+	"author": "Nick Goodliff <nick@hypergram.co> (https://hypergram.co)",
+	"license": "MIT",
+	"main": "dist/bootstrap-mithril",
+	"module": "dist/bootstrap-mithril.mjs",
+	"scripts": {
+		"clean": "rm -rf dist/*",
+		"build": "npm run clean && npm run rollup",
+		"rollup": "../../node_modules/rollup/bin/rollup -c ../../scripts/rollup.umd.js && ../../node_modules/rollup/bin/rollup -c ../../scripts/rollup.es.js",
+		"webpack:es": "DEST=bootstrap-mithril.mjs ../../node_modules/webpack/bin/webpack.js -p --config ../../scripts/webpack.config.es.js",
+		"webpack:umd": "DEST=bootstrap-mithril.js ../../node_modules/webpack/bin/webpack.js -p --config ../../scripts/webpack.config.umd.js"
+	},
+	"files": [
+		"dist",
+		"README.md"
+	],
+	"dependencies": {
+		"bootstrap-mithril-breadcrumb": "^1.0.4-alpha.0",
+		"bootstrap-mithril-button": "^1.0.4-alpha.0",
+		"bootstrap-mithril-card": "^1.0.4-alpha.0",
+		"bootstrap-mithril-formgroup": "^1.0.4-alpha.0",
+		"bootstrap-mithril-navbar": "^1.0.4-alpha.0",
+		"mithril": "1.1.6"
+	}
 }

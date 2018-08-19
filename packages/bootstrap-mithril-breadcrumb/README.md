@@ -1,34 +1,35 @@
 # bootstrap-mithril-breadcrumb
+
 ## Usage
 
-~~~javascript
+```javascript
 import m from "mithril";
 import breadcrumb from "bootstrap-mithril-breadcrumb";
 
 const myBreadcrumb = m(breadcrumb, {
-  label: "Breadcrumb"
+	label: "Breadcrumb",
 });
-~~~
+```
 
 Add a URL:
 
-~~~javascript
+```javascript
 const myBreadcrumb = m(breadcrumb, {
-  label: "Breadcrumb",
-  url: {
-    href: "/index",
-    oncreate: m.route.link
-  }
+	label: "Breadcrumb",
+	url: {
+		href: "/index",
+		oncreate: m.route.link,
+	},
 });
-~~~
+```
 
 Add an onclick event:
 
-~~~javascript
+```javascript
 const myBreadcrumb = m(breadcrumb, {
-  label: "Breadcrumb",
-  events: {
-    onclick: () => console.log("click")
-  }
+	label: "Breadcrumb",
+	events: {
+		onclick: () => console.log("click"),
+	},
 });
-~~~
+```
