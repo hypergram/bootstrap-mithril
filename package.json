@@ -34,10 +34,5 @@
 		"rollup-plugin-serve": "^0.4.2",
 		"rollup-plugin-uglify": "^4.0.0"
 	},
-	"name": "bootstrap-mithril",
-	"version": "1.0.0",
-	"author": "Nick Goodliff <nick@hypergram.co> (https://hypergram.co)",
-	"license": "MIT",
-	"main": "packages/bootstrap-mithril/dist/bootstrap-mithril",
-	"module": "packages/bootstrap-mithril/dist/bootstrap-mithril.mjs"
+	"name": "bootstrap-mithril"
 }

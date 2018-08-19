@@ -3,6 +3,7 @@
 	"version": "1.0.1",
 	"author": "Nick Goodliff <nick@hypergram.co> (https://hypergram.co)",
 	"license": "MIT",
+	"private": true,
 	"scripts": {
 		"dev": "npm-run-all --parallel dev:watch dev:serve",
 		"dev:serve": "webpack-dev-server --config scripts/webpack.config.dev.js --port 3900 --host 127.0.0.1",
