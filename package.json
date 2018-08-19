@@ -4,12 +4,7 @@
 		"postinstall": "lerna bootstrap",
 		"lint": "eslint ./packages/bootstrap-mithril-*",
 		"clean": "lerna clean --yes",
-		"build": "lerna run build && npm run build:css",
-		"build:component": "node ./scripts/buildComponent",
-		"build:css": "node ./scripts/buildComponentCSS",
-		"build:standalone": "node ./scripts/buildStandalone",
-		"tests:run": "node ./scripts/runTests",
-		"tests:update": "node_modules/jest/bin/jest.js --updateSnapshot --silent"
+		"build": "lerna run build"
 	},
 	"devDependencies": {
 		"babel-cli": "^6.26.0",
@@ -39,5 +34,10 @@
 		"rollup-plugin-serve": "^0.4.2",
 		"rollup-plugin-uglify": "^4.0.0"
 	},
-	"name": "bootstrap-mithril"
+	"name": "bootstrap-mithril",
+	"version": "1.0.0",
+	"author": "Nick Goodliff <nick@hypergram.co> (https://hypergram.co)",
+	"license": "MIT",
+	"main": "packages/bootstrap-mithril/dist/bootstrap-mithril",
+	"module": "packages/bootstrap-mithril/dist/bootstrap-mithril.mjs"
 }

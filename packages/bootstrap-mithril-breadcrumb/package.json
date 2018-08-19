@@ -1,0 +1,21 @@
+{
+  "name": "bootstrap-mithril-breadcrumb",
+  "version": "1.0.1",
+  "author": "Nick Goodliff <nick@hypergram.co> (https://hypergram.co)",
+  "license": "MIT",
+  "main": "dist/bootstrap-mithril-breadcrumb",
+  "module": "dist/bootstrap-mithril-breadcrumb.mjs",
+  "scripts": {
+    "clean": "rm -rf dist/*",
+    "rollup": "../../node_modules/rollup/bin/rollup -c ../../scripts/rollup.umd.js && ../../node_modules/rollup/bin/rollup -c ../../scripts/rollup.es.js",
+    "build": "npm run clean && npm run rollup"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "dependencies": {
+	"mithril": "1.1.6",
+	"lodash": "4.17.10"
+  }
+}

@@ -20,6 +20,7 @@
     "bootstrap-mithril-button": "^1.0.1",
     "bootstrap-mithril-card": "^1.0.1",
     "bootstrap-mithril-navbar": "^1.0.1",
+    "bootstrap-mithril-breadcrumb": "^1.0.1",
     "mithril": "1.1.6"
   }
 }

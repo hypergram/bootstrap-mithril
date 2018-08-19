@@ -5,3 +5,5 @@ lerna-debug.log
 .eslintcache
 
 npm-debug*
+yarn-error.log
+packages/test/dist/js/index.js.gz

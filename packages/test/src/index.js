@@ -12,7 +12,6 @@ m.render(
 				m("p", "Bootstrap components for Mithril"),
 				m("section", [
 					m("h2", "Buttons"),
-					m("p", "Buttons"),
 					m(bm.button, {
 						label: "Primary",
 						classes: ["btn-primary mr-1"],
@@ -41,6 +40,38 @@ m.render(
 						href: "#",
 						classes: ["btn-info"],
 					}),
+				]),
+				m("hr"),
+				m("section", [
+					m("h2", "Breadcrumb"),
+					m(bm.breadcrumb, {
+						items: [
+							{ href: "/", text: "Home" },
+							{ href: "/", text: "Link 1" },
+							{ text: "Link 2 (Active)" },
+						],
+					}),
+				]),
+				m("hr"),
+				m("section", [
+					m("h2", "Card"),
+					m(".card-deck", [
+						m(bm.card, {
+							classes: ["bg-light mb-3"],
+							header: "Card 1",
+							body: m("p", "Card body"),
+						}),
+						m(bm.card, {
+							classes: ["bg-primary text-white mb-3"],
+							body: m("p", "Card body"),
+							footer: "Card Footer",
+							footerClasses: ["text-muted"],
+						}),
+						m(bm.card, {
+							classes: ["bg-dark text-white mb-3"],
+							body: m("p", "Card body"),
+						}),
+					]),
 				]),
 			]),
 		]),
