@@ -1,6 +1,6 @@
 # bootstrap-mithril
 
-Bootstrap v4.1 component library for [Mithril](https://mithril.js.org)
+[Bootstrap](https://github.com/twbs/bootstrap) v4.1 component library for [Mithril](https://mithril.js.org)
 
 ## Installation
 
@@ -36,4 +36,4 @@ Packages are built with [Rollup](http://rollupjs.org), both as `es` module and a
 
 ## Credits
 
-Thanks to the [Polythene](https://github.com/ArthurClemens/polythene) Material Design component library for packages structure
+Thanks to the [Polythene](https://github.com/ArthurClemens/polythene) Material Design component library for packages structuring
