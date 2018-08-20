@@ -90,6 +90,24 @@ m.render(
 					}),
 				]),
 				m("hr"),
+				m("section", [
+					m("h2", "Navbar"),
+					m(bm.navbar, {
+						color: "light",
+						toggler: true,
+						brand: {
+							title: "Brand"
+						},
+						navitems: m("ul.navbar-nav",[
+							m("li.nav-item.active", [
+								m("a.nav-link", {
+									href: "/"
+								}, ["Home", m("span.sr-only", "(current)")])
+							])
+						])
+					}),
+				]),
+				m("hr"),
 			]),
 		]),
 	])

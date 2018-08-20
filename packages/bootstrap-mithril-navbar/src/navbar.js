@@ -4,14 +4,19 @@ const navbar = {};
 navbar.view = vnode => {
 	const attrs = vnode.attrs;
 	return m(
-		"nav.navbar" + attrs.toggler ? ".navbar-expand-lg" : "",
+		"nav",
 		{
-			className: attrs.classes ? attrs.classes.join(" ") : null,
+			className: [
+				"navbar",
+				attrs.toggler ? "navbar-expand-lg" : null,
+				`navbar-${attrs.color || "light"}`,
+				`bg-${attrs.colorBg || (attrs.color || "light")}`,
+			].join(" "),
 		},
 		[
 			attrs.brand
 				? m(
-					"a",
+					"a.navbar-brand",
 					{
 						href: attrs.brand.href ? attrs.brand.href : "/",
 						oncreate: m.route.link,
