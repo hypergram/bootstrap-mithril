@@ -1,6 +1,12 @@
 # bootstrap-mithril
 
-Bootstrap v4 components for mithril
+Bootstrap v4.1 component library for [Mithril](https://mithril.js.org)
+
+## Installation
+
+```bash
+npm install --save bootstrap-mithril
+```
 
 ## Setting up the development repo
 
@@ -26,3 +32,8 @@ Commands:
 -   `yarn clean` - removes all dist directories
 
 Packages are built with [Rollup](http://rollupjs.org), both as `es` module and as `umd`. Rollup creates smaller files compared to Webpack. If you like to experiment, build scripts are in the root `scripts` directory.
+
+
+## Credits
+
+Thanks to the [Polythene](https://github.com/ArthurClemens/polythene) Material Design component library for packages structure
