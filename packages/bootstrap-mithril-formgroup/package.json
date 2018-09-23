@@ -1,6 +1,6 @@
 {
 	"name": "bootstrap-mithril-formgroup",
-	"version": "1.0.4-alpha.1",
+	"version": "1.0.5-alpha.0",
 	"author": "Nick Goodliff <nick@hypergram.co> (https://hypergram.co)",
 	"license": "MIT",
 	"main": "dist/bootstrap-mithril-formgroup",
