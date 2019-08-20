@@ -2,10 +2,6 @@
 # yarn lockfile v1
 
 
-mithril-range@0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/mithril-range/-/mithril-range-0.3.0.tgz#0d55cab40f80e1f5af7a52caf0cb57ffa9b8d772"
-
 mithril@1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/mithril/-/mithril-1.1.6.tgz#bd2cc0de3d3c86076a6a7a30367a601a1bd108f3"
