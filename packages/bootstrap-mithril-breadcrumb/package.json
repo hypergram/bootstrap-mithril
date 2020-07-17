@@ -15,7 +15,7 @@
 		"README.md"
 	],
 	"dependencies": {
-		"lodash": "4.17.11",
+		"lodash": "4.17.19",
 		"mithril": "1.1.6"
 	}
 }
