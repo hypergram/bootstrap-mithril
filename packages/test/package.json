@@ -16,7 +16,7 @@
 	],
 	"dependencies": {
 		"bootstrap-mithril": "^1.0.5-alpha.0",
-		"mithril": "1.1.6"
+		"mithril": "1.1.7"
 	},
 	"devDependencies": {
 		"compression-webpack-plugin": "1.1.12",
