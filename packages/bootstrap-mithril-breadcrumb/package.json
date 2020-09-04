@@ -16,6 +16,6 @@
 	],
 	"dependencies": {
 		"lodash": "4.17.11",
-		"mithril": "1.1.6"
+		"mithril": "1.1.7"
 	}
 }
